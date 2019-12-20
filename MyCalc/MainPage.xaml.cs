@@ -25,6 +25,7 @@ namespace MyCalc
         float a;
         int count = 0;
         bool znak = false;
+        string numberKey;
 
         public MainPage()
         {
@@ -63,7 +64,7 @@ namespace MyCalc
                 default:
                     break;
             }
-            int lenght = sumText.Text.Length -1;
+            int lenght = sumText.Text.Length - 1;
             string text = sumText.Text;
             //  sumText.Text = "";
             for (int i = lenght; i > 0; --i)
@@ -84,7 +85,7 @@ namespace MyCalc
                 numText.Text = sumText.Text + (sender as Button).Content;
             }
             else
-            { 
+            {
                 numText.Text = "";
                 for (int i = 0; i < lenght; i++)
                 {
@@ -96,7 +97,7 @@ namespace MyCalc
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+
             if (sumText.Text == "0" || numText.Text == "Деление на ноль" || znak)
             {
                 sumText.Text = (sender as Button).Content.ToString();
@@ -114,7 +115,7 @@ namespace MyCalc
         {
             if (sumText.Text.IndexOf(",") == -1)
                 sumText.Text += (sender as Button).Content;
-            
+
         }
 
         private void NumPlusButton_Click(object sender, RoutedEventArgs e)
@@ -147,7 +148,7 @@ namespace MyCalc
 
         private void ZnakMinusButton_Click_(object sender, RoutedEventArgs e)
         {
-            if(sumText.Text != "0")
+            if (sumText.Text != "0")
                 if (sumText.Text[0] == '-')
                     sumText.Text = sumText.Text.Remove(0, 1);
                 else
@@ -156,7 +157,7 @@ namespace MyCalc
 
         private void NumEquaButton_Click(object sender, RoutedEventArgs e)
         {
-            
+
             if (numText.Text.IndexOf("=") == -1)
                 numText.Text += sumText.Text + (sender as Button).Content;
             CalculateSum();
@@ -179,6 +180,62 @@ namespace MyCalc
             sumText.Text = "0";
             numText.Text = "";
             a = 0;
+        }
+
+        private void Page_KeyDown(object sender, KeyRoutedEventArgs e)
+        {
+
+            /*  if (e.Key == Windows.System.VirtualKey.NumberPad0)
+              {
+                  // sumText.Text += 0;
+                  Num0Button.Click += Button_Click; ;
+              }*/
+            numberKey = e.Key.ToString();
+            switch (numberKey)
+            {
+                case "Number0":
+                case "NumberPad0":
+                    numberKey = "0";
+                    KeyDowns();
+                    break;
+                case "Number1":
+                case "NumberPad1":
+                    numberKey = "1";
+                    KeyDowns();
+                    break;
+                case "Number2":
+                case "NumberPad2":
+                    numberKey = "2";
+                    KeyDowns();
+                    break;
+                case "Number3":
+                case "NumberPad3":
+                    numberKey = "3";
+                    KeyDowns();
+                    break;
+                case "Number4":
+                case "NumberPad4":
+                    numberKey = "4";
+                    KeyDowns();
+                    break;
+
+            }
+        }
+        private void KeyDowns()
+        { 
+            if (sumText.Text == "0" || numText.Text == "Деление на ноль" || znak)
+            {
+                sumText.Text = numberKey;
+                znak = false;
+            }
+            else
+                sumText.Text += numberKey;
+
+            if (numText.Text == "Деление на ноль")
+                numText.Text = "";
+        }
+        private void Page_KeyUp(object sender, KeyRoutedEventArgs e)
+        {
         }
     }
 }
