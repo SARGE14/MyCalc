@@ -13,7 +13,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBlock x:Name="sumText" Grid.Row="0" HorizontalAlignment="Right" Margin="0,32,9,0" Text="0.00007777" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="40" FontWeight="Bold"/>
+        <TextBlock x:Name="sumText" Grid.Row="0" HorizontalAlignment="Right" Margin="0,32,9,0" Text="0.00007777" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="50" FontWeight="Bold"/>
         <Button x:Name="DelButton" Grid.Row="1" Content="&lt;-" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Height="100" FontSize="18" FontWeight="Bold" Click="DelButton_Click"/>
         <Button Grid.Row="1" Content="CE" Margin="115,10,0,0" VerticalAlignment="Top" Width="100" Height="100" FontSize="24" FontWeight="Bold" Click="ClearButton_Click"/>
         <Button x:Name="ClearButton" Grid.Row="1" Content="C" Margin="220,10,0,0" VerticalAlignment="Top" Width="100" Height="100" FontSize="24" FontWeight="Bold" Click="ClearButton_Click"/>
