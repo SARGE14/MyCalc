@@ -30,6 +30,8 @@ namespace MyCalc
         public MainPage()
         {
             this.InitializeComponent();
+            Windows.UI.ViewManagement.ApplicationView appView = Windows.UI.ViewManagement.ApplicationView.GetForCurrentView();
+            appView.SetPreferredMinSize(new Size(345, 400));
             sumText.Text = "0";
             numText.Text = "";
         }
@@ -97,7 +99,6 @@ namespace MyCalc
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
             if (sumText.Text == "0" || numText.Text == "Деление на ноль" || znak)
             {
                 sumText.Text = (sender as Button).Content.ToString();
@@ -118,14 +119,14 @@ namespace MyCalc
 
         }
 
-        private void NumPlusButton_Click(object sender, RoutedEventArgs e)
+        private void NumAddButton_Click(object sender, RoutedEventArgs e)
         {
             a = float.Parse(sumText.Text);
             count = 1;
             Sum_Click(sender);
         }
 
-        private void NumMinusButtonmultiply_Click(object sender, RoutedEventArgs e)
+        private void NumSubtractButton_Click(object sender, RoutedEventArgs e)
         {
             a = float.Parse(sumText.Text);
             count = 2;
@@ -155,7 +156,7 @@ namespace MyCalc
                     sumText.Text = "-" + sumText.Text;
         }
 
-        private void NumEquaButton_Click(object sender, RoutedEventArgs e)
+        private void NumEnterButton_Click(object sender, RoutedEventArgs e)
         {
 
             if (numText.Text.IndexOf("=") == -1)
@@ -184,58 +185,93 @@ namespace MyCalc
 
         private void Page_KeyDown(object sender, KeyRoutedEventArgs e)
         {
-
-            /*  if (e.Key == Windows.System.VirtualKey.NumberPad0)
-              {
-                  // sumText.Text += 0;
-                  Num0Button.Click += Button_Click; ;
-              }*/
             numberKey = e.Key.ToString();
             switch (numberKey)
             {
                 case "Number0":
                 case "NumberPad0":
-                    numberKey = "0";
-                    KeyDowns();
+                    sender = Num0Button;
+                    Button_Click(sender, e);
                     break;
                 case "Number1":
                 case "NumberPad1":
-                    numberKey = "1";
-                    KeyDowns();
+                    sender = Num1Button;
+                    Button_Click(sender, e);
                     break;
                 case "Number2":
                 case "NumberPad2":
-                    numberKey = "2";
-                    KeyDowns();
+                    sender = Num2Button;
+                    Button_Click(sender, e);
                     break;
                 case "Number3":
                 case "NumberPad3":
-                    numberKey = "3";
-                    KeyDowns();
+                    sender = Num3Button;
+                    Button_Click(sender, e);
                     break;
                 case "Number4":
                 case "NumberPad4":
-                    numberKey = "4";
-                    KeyDowns();
+                    sender = Num4Button;
+                    Button_Click(sender, e);
+                    break;
+                case "Number5":
+                case "NumberPad5":
+                    sender = Num5Button;
+                    Button_Click(sender, e);
+                    break;
+                case "Number6":
+                case "NumberPad6":
+                    sender = Num6Button;
+                    Button_Click(sender, e);
+                    break;
+                case "Number7":
+                case "NumberPad7":
+                    sender = Num7Button;
+                    Button_Click(sender, e);
+                    break;
+                case "Number8":
+                case "NumberPad8":
+                    sender = Num8Button;
+                    Button_Click(sender, e);
+                    break;
+                case "Number9":
+                case "NumberPad9":
+                    sender = Num9Button;
+                    Button_Click(sender, e);
+                    break;
+                case "Back":
+                    DelButton_Click(sender, e);
+                    break;
+                case "Decimal":
+                    sender = NumComButton;
+                    NumComButton_Click(sender, e);
+                    break;
+                case "Add":
+                    sender = NumAddButton;
+                    NumAddButton_Click(sender, e);
+                    break;
+                case "Subtract":
+                    sender = NumSubtractButton;
+                    NumSubtractButton_Click(sender, e);
+                    break;
+                case "Multiply":
+                    sender = NumMultiplyButton;
+                    NumMultiplyButton_Click(sender, e);
+                    break;
+                case "Divide":
+                    sender = NumDivideButton;
+                    //NumDivideButton.
+                    NumDivideButton_Click(sender, e);
+                    break;
+                case "Enter":
+                    sender = NumEnterButton;
+                    NumEnterButton_Click(sender, e);
                     break;
 
             }
         }
-        private void KeyDowns()
-        { 
-            if (sumText.Text == "0" || numText.Text == "Деление на ноль" || znak)
-            {
-                sumText.Text = numberKey;
-                znak = false;
-            }
-            else
-                sumText.Text += numberKey;
 
-            if (numText.Text == "Деление на ноль")
-                numText.Text = "";
-        }
-        private void Page_KeyUp(object sender, KeyRoutedEventArgs e)
-        {
-        }
+
+
+      
     }
 }

@@ -5,36 +5,34 @@
     xmlns:local="using:MyCalc"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" RequestedTheme="Dark" d:DesignWidth="435" d:DesignHeight="750" KeyDown="Page_KeyDown" KeyUp="Page_KeyUp">
-
+    mc:Ignorable="d" d:DesignWidth="345" d:DesignHeight="400" KeyDown="Page_KeyDown" IsTabStop="False" ScrollViewer.VerticalScrollBarVisibility="Disabled" MaxWidth="425" MaxHeight="555" Background="{ThemeResource AppBarBackgroundThemeBrush}">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBlock x:Name="sumText" Grid.Row="0" HorizontalAlignment="Right" Margin="0,32,9,0" Text="0.00007777" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="50" FontWeight="Bold"/>
-        <Button x:Name="DelButton" Grid.Row="1" Content="&lt;-" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Height="100" FontSize="18" FontWeight="Bold" Click="DelButton_Click"/>
-        <Button Grid.Row="1" Content="CE" Margin="115,10,0,0" VerticalAlignment="Top" Width="100" Height="100" FontSize="24" FontWeight="Bold" Click="ClearButton_Click"/>
-        <Button x:Name="ClearButton" Grid.Row="1" Content="C" Margin="220,10,0,0" VerticalAlignment="Top" Width="100" Height="100" FontSize="24" FontWeight="Bold" Click="ClearButton_Click"/>
-        <Button x:Name="NumDivideButton" Grid.Row="1" Content="/" Margin="325,10,0,0" VerticalAlignment="Top" Width="100" Height="100" FontSize="20" FontWeight="Bold" Click="NumDivideButton_Click"/>
-        <Button x:Name="NumMultiplyButton" Grid.Row="1" Content="*" Margin="325,115,0,0" VerticalAlignment="Top" Width="100" Height="100" FontSize="30" FontWeight="Bold" Click="NumMultiplyButton_Click"/>
-        <Button x:Name="NumMinusButtonmultiply" Grid.Row="1" Content="-" Margin="325,220,0,0" VerticalAlignment="Top" Width="100" Height="100" FontSize="30" FontWeight="Bold" Click="NumMinusButtonmultiply_Click"/>
-        <Button x:Name="Num1Button" Grid.Row="1" Content="1" Margin="10,325,0,0" VerticalAlignment="Top" Width="100" Height="100" FontSize="18" FontWeight="Bold" Click="Button_Click"/>
-        <Button x:Name="Num2Button" Grid.Row="1" Content="2" Margin="115,325,0,0" VerticalAlignment="Top" Width="100" Height="100" FontSize="18" FontWeight="Bold" Click="Button_Click"/>
-        <Button x:Name="Num3Button" Grid.Row="1" Content="3" Margin="220,325,0,0" VerticalAlignment="Top" Width="100" Height="100" FontSize="18" FontWeight="Bold" Click="Button_Click"/>
-        <Button x:Name="Num4Button" Grid.Row="1" Content="4" Margin="10,220,0,0" VerticalAlignment="Top" Width="100" Height="100" FontSize="18" FontWeight="Bold" Click="Button_Click"/>
-        <Button x:Name="Num5Button" Grid.Row="1" Content="5" Margin="115,220,0,0" VerticalAlignment="Top" Width="100" Height="100" FontSize="18" FontWeight="Bold" Click="Button_Click"/>
-        <Button x:Name="Num6Button" Grid.Row="1" Content="6" Margin="220,220,0,0" VerticalAlignment="Top" Width="100" Height="100" FontSize="18" FontWeight="Bold" Click="Button_Click"/>
-        <Button x:Name="Num7Button" Grid.Row="1" Content="7" Margin="10,115,0,0" VerticalAlignment="Top" Width="100" Height="100" FontSize="18" FontWeight="Bold" Click="Button_Click"/>
-        <Button x:Name="Num8Button" Grid.Row="1" Content="8" Margin="115,115,0,0" VerticalAlignment="Top" Width="100" Height="100" FontSize="18" FontWeight="Bold" Click="Button_Click"/>
-        <Button x:Name="Num9Button" Grid.Row="1" Content="9" Margin="220,115,0,0" VerticalAlignment="Top" Width="100" Height="100" FontSize="18" FontWeight="Bold" Click="Button_Click"/>
-        <Button x:Name="NumPlusButton" Grid.Row="1" Content="+" Margin="325,325,0,0" VerticalAlignment="Top" Width="100" Height="100" FontSize="30" FontWeight="Bold" Click="NumPlusButton_Click"/>
-        <Button x:Name="ZnakMinusButton" Grid.Row="1" Content="+/-" Margin="10,430,0,0" VerticalAlignment="Top" Width="100" Height="100" FontSize="24" FontWeight="Bold" Click="ZnakMinusButton_Click_"/>
-        <Button x:Name="Num0Button" Grid.Row="1" Content="0" Margin="115,430,0,0" VerticalAlignment="Top" Width="100" Height="100" FontSize="18" FontWeight="Bold" Click="Button_Click"/>
-        <Button x:Name="NumComButton" Grid.Row="1" Content="," Margin="220,430,0,0" VerticalAlignment="Top" Width="100" Height="100" FontSize="24" FontWeight="Bold" Click="NumComButton_Click"/>
-        <Button x:Name="NumEquaButton" Grid.Row="1" Content="=" Margin="325,430,0,0" VerticalAlignment="Top" Width="100" Height="100" FontSize="30" FontWeight="Bold" Click="NumEquaButton_Click"/>
-        <TextBlock x:Name="numText" Grid.Row="0" HorizontalAlignment="Right" Margin="0,10,9,0" Text="12.23456+" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" FontWeight="Normal" RequestedTheme="Dark" FocusVisualPrimaryBrush="White" Opacity="0.775"/>
+        <TextBlock x:Name="sumText" Grid.Row="0" HorizontalAlignment="Right" Margin="0,50,11,0" Text="0.00007777" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="50" FontWeight="Bold" />
+        <TextBlock x:Name="numText" Grid.Row="0" HorizontalAlignment="Right" Margin="0,20,10,0" Text="12.23456+" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="22" FontWeight="Normal" Opacity="0.75"/>
+        <Button x:Name="DelButton" Content="&lt;-" Margin="5,5,0,0" VerticalAlignment="Top" Width="80" Height="50" FontSize="18" FontWeight="Bold" Click="DelButton_Click" IsTabStop="False" Grid.Row="1" Background="#26FFFFFF"/>
+        <Button x:Name="CeButton" Content="CE" Margin="90,5,0,0" VerticalAlignment="Top" Width="80" Height="50" FontSize="24" FontWeight="Bold" Click="ClearButton_Click" IsTabStop="False" Grid.Row="1" Background="#26FFFFFF"/>
+        <Button x:Name="ClearButton" Content="C" Margin="175,5,0,0" VerticalAlignment="Top" Width="80" Height="50" FontSize="24" FontWeight="Bold" Click="ClearButton_Click" IsTabStop="False" Grid.Row="1" Background="#26FFFFFF"/>
+        <Button x:Name="NumDivideButton" Content="/" Margin="260,5,0,0" VerticalAlignment="Top" Width="80" Height="50" FontSize="20" FontWeight="Bold" Click="NumDivideButton_Click" IsTabStop="False" Grid.Row="1" Background="#26FFFFFF"/>
+        <Button x:Name="NumMultiplyButton" Grid.Row="1" Content="*" Margin="260,60,0,0" VerticalAlignment="Top" Width="80" Height="50" FontSize="30" FontWeight="Bold" Click="NumMultiplyButton_Click" IsTabStop="False" Background="#26FFFFFF"/>
+        <Button x:Name="NumSubtractButton" Grid.Row="1" Content="-" Margin="260,115,0,0" VerticalAlignment="Top" Width="80" Height="50" FontSize="30" FontWeight="Bold" Click="NumSubtractButton_Click" IsTabStop="False" Background="#26FFFFFF"/>
+        <Button x:Name="Num0Button" Grid.Row="1" Content="0" Margin="90,225,0,0" VerticalAlignment="Top" Width="80" Height="50" FontSize="18" FontWeight="Bold" Click="Button_Click" IsTabStop="False"/>
+        <Button x:Name="Num1Button" Grid.Row="1" Content="1" Margin="5,170,0,0" VerticalAlignment="Top" Width="80" Height="50" FontSize="18" FontWeight="Bold" Click="Button_Click" IsTabStop="False"/>
+        <Button x:Name="Num2Button" Grid.Row="1" Content="2" Margin="90,170,0,0" VerticalAlignment="Top" Width="80" Height="50" FontSize="18" FontWeight="Bold" Click="Button_Click" IsTabStop="False"/>
+        <Button x:Name="Num3Button" Grid.Row="1" Content="3" Margin="175,170,0,0" VerticalAlignment="Top" Width="80" Height="50" FontSize="18" FontWeight="Bold" Click="Button_Click" IsTabStop="False"/>
+        <Button x:Name="Num4Button" Grid.Row="1" Content="4" Margin="5,115,0,0" VerticalAlignment="Top" Width="80" Height="50" FontSize="18" FontWeight="Bold" Click="Button_Click" IsTabStop="False"/>
+        <Button x:Name="Num5Button" Grid.Row="1" Content="5" Margin="90,115,0,0" VerticalAlignment="Top" Width="80" Height="50" FontSize="18" FontWeight="Bold" Click="Button_Click" IsTabStop="False"/>
+        <Button x:Name="Num6Button" Grid.Row="1" Content="6" Margin="175,115,0,0" VerticalAlignment="Top" Width="80" Height="50" FontSize="18" FontWeight="Bold" Click="Button_Click" IsTabStop="False"/>
+        <Button x:Name="Num7Button" Grid.Row="1" Content="7" Margin="5,60,0,0" VerticalAlignment="Top" Width="80" Height="50" FontSize="18" FontWeight="Bold" Click="Button_Click" IsTabStop="False"/>
+        <Button x:Name="Num8Button" Grid.Row="1" Content="8" Margin="90,60,0,0" VerticalAlignment="Top" Width="80" Height="50" FontSize="18" FontWeight="Bold" Click="Button_Click" IsTabStop="False"/>
+        <Button x:Name="Num9Button" Grid.Row="1" Content="9" Margin="175,60,0,0" VerticalAlignment="Top" Width="80" Height="50" FontSize="18" FontWeight="Bold" Click="Button_Click" IsTabStop="False"/>
+        <Button x:Name="NumAddButton" Grid.Row="1" Content="+" Margin="260,170,0,0" VerticalAlignment="Top" Width="80" Height="50" FontSize="30" FontWeight="Bold" Click="NumAddButton_Click" IsTabStop="False" Background="#26FFFFFF"/>
+        <Button x:Name="ZnakMinusButton" Grid.Row="1" Content="+/-" Margin="5,225,0,0" VerticalAlignment="Top" Width="80" Height="50" FontSize="24" FontWeight="Bold" Click="ZnakMinusButton_Click_" IsTabStop="False"/>
+        <Button x:Name="NumComButton" Grid.Row="1" Content="," Margin="175,225,0,0" VerticalAlignment="Top" Width="80" Height="50" FontSize="24" FontWeight="Bold" Click="NumComButton_Click" IsTabStop="False"/>
+        <Button x:Name="NumEnterButton" Grid.Row="1" Content="=" Margin="260,225,0,0" VerticalAlignment="Top" Width="80" Height="50" FontSize="30" FontWeight="Bold" Click="NumEnterButton_Click" Background="#26FFFFFF"/>
 
     </Grid>
 </Page>
