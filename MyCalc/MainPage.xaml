@@ -5,7 +5,8 @@
     xmlns:local="using:MyCalc"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d" d:DesignWidth="345" d:DesignHeight="400" KeyDown="Page_KeyDown" IsTabStop="False" ScrollViewer.VerticalScrollBarVisibility="Disabled" MaxWidth="425" MaxHeight="555" Background="{ThemeResource AppBarBackgroundThemeBrush}">
+    mc:Ignorable="d" 
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" d:DesignWidth="345" d:DesignHeight="400" KeyDown="Page_KeyDown" IsTabStop="False">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>

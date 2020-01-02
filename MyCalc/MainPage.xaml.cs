@@ -71,9 +71,13 @@ namespace MyCalc
             //  sumText.Text = "";
             for (int i = lenght; i > 0; --i)
             {
-                if (text[i].ToString() == "0" || text[i].ToString() == ",")
+                if (text[i].ToString() == "0")
                     sumText.Text = sumText.Text.Remove(i, 1);
-                else break;
+                if (text[i].ToString() == ",")
+                {
+                    sumText.Text = sumText.Text.Remove(i, 1);
+                    break;
+                }
             }
         }
 
